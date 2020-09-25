@@ -1,6 +1,9 @@
-FROM gitpod/workspace-full
+FROM swift AS build
 
 USER gitpod
+FROM gitpod/workspace-full
+COPY --from=build /usr/bin/swiftc /usr/bin/
+
 # Install Swift dependencies
 RUN sudo apt-get update -q && \
     sudo apt-get install -yq libtinfo5 \
