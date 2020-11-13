@@ -27,7 +27,7 @@ RUN sudo apt-get update -q && \
     && sudo rm -rf /var/lib/apt/lists/*
 
 # swiftenv
-RUN git clone https://github.com/kylef/swiftenv.git ~/.swiftenv
+RUN git clone https://github.com/moaible/swiftenv ~/.swiftenv
 RUN { echo; \
       echo 'export SWIFTENV_ROOT="$HOME/.swiftenv"'; \
       echo 'export PATH="$SWIFTENV_ROOT/bin:$PATH"'; \
