@@ -27,9 +27,10 @@ RUN sudo apt-get update -q && \
     && sudo rm -rf /var/lib/apt/lists/*
 
 # swiftenv
-ENV SWIFTENV_ROOT $HOME/.swiftenv
-ENV PATH $SWIFTENV_ROOT/bin:$PATH
-RUN eval "$(swiftenv init -)"
+RUN { echo; \
+        echo 'export SWIFTENV_ROOT="$HOME/.swiftenv"'; \
+        echo 'export PATH="$SWIFTENV_ROOT/bin:$PATH"'; \
+        echo 'eval "$(swiftenv init -)"'; } >> ~/.bashrc
 
 # Install Swift
 # RUN mkdir -p /home/gitpod/.swift && \
