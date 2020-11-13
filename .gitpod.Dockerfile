@@ -23,6 +23,12 @@ RUN sudo apt-get update -q && \
         pkg-config \
     && sudo rm -rf /var/lib/apt/lists/*
 
+# Install swiftenv
+git clone https://github.com/kylef/swiftenv.git ~/.swiftenv
+echo 'export SWIFTENV_ROOT="$HOME/.swiftenv"' >> ~/.bashrc
+echo 'export PATH="$SWIFTENV_ROOT/bin:$PATH"' >> ~/.bashrc
+echo 'eval "$(swiftenv init -)"' >> ~/.basrc
+
 # Install Swift
 RUN mkdir -p /home/gitpod/.swift && \
     cd /home/gitpod/.swift && \
