@@ -29,12 +29,6 @@ RUN sudo apt-get update -q && \
 # swiftenv
 RUN git clone https://github.com/kylef/swiftenv.git ~/.swiftenv
 RUN { echo; \
-        echo 'export SWIFTENV_ROOT="$HOME/.swiftenv"'; \
-        echo 'export PATH="$SWIFTENV_ROOT/bin:$PATH"'; \
-        echo 'eval "$(swiftenv init -)"'; } >> ~/.bashrc
-
-# Install Swift
-# RUN mkdir -p /home/gitpod/.swift && \
-#     cd /home/gitpod/.swift && \
-#     curl -fsSL https://swift.org/builds/swift-5.3-release/ubuntu1804/swift-5.3-RELEASE/swift-5.3-RELEASE-ubuntu18.04.tar.gz | tar -xzv
-# ENV PATH="$PATH:/home/gitpod/.swift/swift-5.3-RELEASE-ubuntu18.04/usr/bin"
+      echo 'export SWIFTENV_ROOT="$HOME/.swiftenv"'; \
+      echo 'export PATH="$SWIFTENV_ROOT/bin:$PATH"'; \
+      echo 'eval "$(swiftenv init -)"'; } >> ~/.bashrc
